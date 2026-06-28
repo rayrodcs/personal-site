@@ -1,3 +1,5 @@
+import { profileLinks } from '../data/profileLinks'
+
 export function Hero() {
   return (
     <section id="home" className="hero-section">
@@ -32,7 +34,8 @@ export function Hero() {
             View My Work <span className="ml-3">-&gt;</span>
           </a>
           <a
-            href="#resume"
+            href={profileLinks.resume}
+            download
             className="inline-flex items-center justify-center rounded-md border border-[var(--borderBlue)] bg-[rgba(13,22,38,0.64)] px-6 py-4 font-mono text-sm font-bold uppercase tracking-[0.08em] text-[var(--text)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--primaryBlue)] hover:text-[var(--primaryBlue)]"
           >
             Download Resume <span className="ml-3">v</span>
