@@ -34,12 +34,12 @@ const focusItems = [
 
 export function StatusCards() {
   return (
-    <section className="status-cards-section" aria-label="Portfolio status cards">
+    <section id="status-cards" className="status-cards-section" aria-label="Portfolio status cards">
       <div className="status-cards-grid">
         <SectionCard title="CURRENTLY" cta="MORE ABOUT ME" href="#about">
           <div className="current-status">
             <span className="status-dot" />
-            <span>OPEN TO NEW OPPORTUNITIES</span>
+            <span>EMPLOYED, OPEN TO NEW OPPORTUNITIES</span>
           </div>
 
           <div className="current-copy">

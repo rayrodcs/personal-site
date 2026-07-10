@@ -2,6 +2,7 @@ import { Navbar } from './components/layout/Navbar'
 import { Sidebar } from './components/layout/Sidebar'
 import { Hero } from './sections/Hero'
 import { StatusCards } from './sections/StatusCards'
+import { About } from './sections/About'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <main>
           <Hero />
           <StatusCards />
+          <About />
         </main>
       </div>
     </div>
