@@ -1,0 +1,10 @@
+@layer components {
+.section-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primaryBlue);
+  }
+}

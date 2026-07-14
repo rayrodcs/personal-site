@@ -3,6 +3,7 @@ import { Sidebar } from './components/layout/Sidebar'
 import { Hero } from './sections/Hero'
 import { StatusCards } from './sections/StatusCards'
 import { About } from './sections/About'
+import { Work } from './sections/Work'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Hero />
           <StatusCards />
           <About />
+          <Work />
         </main>
       </div>
     </div>

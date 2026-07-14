@@ -15,11 +15,11 @@ export function About() {
       <div className="about-panel">
         <div className="about-copy">
           <p className="section-kicker">ABOUT <span className="text-[var(--accentYellow)]">///</span></p>
-          <h2>Engineer. Builder. Systems thinker.</h2>
+          <h2>Engineer, Builder, and Problem Solver.</h2>
 
           <div className="about-body">
             <p>
-              I am Ray Rodriguez, a software engineer based in New York with full-time
+              Hey! I'm Ray Rodriguez, a software engineer based in New York with full-time
               experience building web applications, internal tools, and asynchronous
               distributed systems.
             </p>
@@ -39,11 +39,12 @@ export function About() {
               product opportunities.
             </p>
             <p>
-              I am comfortable working under pressure, navigating tight deadlines, and
-              making practical engineering decisions when the work has real business
-              impact. I care about clean code, reliable systems, and interfaces that
+              Thanks to the work I do at my current company, I am comfortable working under pressure, 
+              navigating tight deadlines, and making practical engineering decisions when the work 
+              has real business impact. I care about clean code, reliable systems, and interfaces that
               feel sharp without getting in the user's way.
             </p>
+            <p>I also have too many interests and hobbies. Definitely ask me about any of these below!</p>
           </div>
 
           <div className="about-interests-wrap" aria-label="Personal interests">

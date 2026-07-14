@@ -1,0 +1,292 @@
+@layer components {
+.work-section {
+    position: relative;
+    z-index: 10;
+    padding: 0 1.25rem 5rem;
+  }
+
+  .work-header {
+    max-width: 52rem;
+  }
+
+  .work-header h2 {
+    max-width: 48rem;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.35rem, 8vw, 4.8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0;
+    color: var(--text);
+  }
+
+  .work-header p:last-child {
+    max-width: 44rem;
+    margin-top: 1.35rem;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .work-featured,
+  .work-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--borderBlue);
+    border-radius: 0.5rem;
+    background:
+      linear-gradient(135deg, rgba(13, 22, 38, 0.94), rgba(5, 9, 20, 0.82)),
+      radial-gradient(circle at 14% 0%, rgba(46, 168, 255, 0.14), transparent 36%);
+    box-shadow:
+      inset 0 1px 0 rgba(245, 247, 250, 0.08),
+      0 18px 46px rgba(0, 0, 0, 0.26);
+  }
+
+  .work-featured::before,
+  .work-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(46, 168, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 168, 255, 0.06) 1px, transparent 1px);
+    background-position: right top;
+    background-size: 34px 34px;
+    mask-image: radial-gradient(circle at 100% 0%, black, transparent 58%);
+  }
+
+  .work-featured {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+
+  .work-featured-copy,
+  .work-featured-aside,
+  .work-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .work-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryBlue);
+  }
+
+  .work-meta-row span {
+    border: 1px solid rgba(46, 168, 255, 0.22);
+    border-radius: 9999px;
+    padding: 0.42rem 0.62rem;
+    background: rgba(46, 168, 255, 0.06);
+  }
+
+  .work-featured h3,
+  .work-card h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--text);
+  }
+
+  .work-featured h3 {
+    font-size: clamp(2rem, 7vw, 4.2rem);
+  }
+
+  .work-card h3 {
+    font-size: 1.65rem;
+  }
+
+  .work-featured p,
+  .work-card p {
+    margin-top: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .work-highlights {
+    display: grid;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 1.35rem 0 0;
+    list-style: none;
+  }
+
+  .work-highlights li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .work-highlights li span {
+    width: 0.48rem;
+    height: 0.48rem;
+    margin-top: 0.48rem;
+    border-radius: 9999px;
+    background: var(--accentYellow);
+    box-shadow: 0 0 12px rgba(255, 210, 31, 0.36);
+  }
+
+  .work-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.35rem;
+  }
+
+  .work-tech-list span {
+    border: 1px solid rgba(46, 168, 255, 0.18);
+    border-radius: 0.35rem;
+    padding: 0.48rem 0.62rem;
+    background: rgba(5, 9, 20, 0.34);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  .work-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .work-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primaryBlue);
+    transition:
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .work-links a:hover {
+    color: var(--text);
+    transform: translateX(0.15rem);
+  }
+
+  .work-featured-aside {
+    border: 1px solid rgba(46, 168, 255, 0.18);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    background:
+      linear-gradient(135deg, rgba(19, 35, 58, 0.68), rgba(13, 22, 38, 0.72)),
+      rgba(5, 9, 20, 0.3);
+  }
+
+  .work-aside-label {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primaryBlue);
+  }
+
+  .work-featured-aside strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    line-height: 1.05;
+    color: var(--text);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .work-card {
+    padding: 1.25rem;
+  }
+
+  .work-private-note {
+    max-width: 48rem;
+    margin-top: 1.25rem;
+    border-left: 2px solid var(--accentYellow);
+    padding-left: 1rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .work-section {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+
+    .work-featured {
+      padding: 2rem;
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .work-section {
+      padding: 0 3rem 6rem 8.75rem;
+    }
+
+    .work-header h2 {
+      font-size: clamp(3.25rem, 4.8vw, 5.5rem);
+    }
+
+    .work-featured {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
+      gap: 2.5rem;
+      align-items: start;
+      padding: 2.4rem;
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .work-card {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .work-section {
+      padding-left: 10rem;
+      padding-right: 4rem;
+    }
+
+    .work-featured {
+      padding: 3rem;
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@layer components {
+.about-section {
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem 1.25rem 5rem;
+  }
+
+  .about-panel {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--borderBlue);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background:
+      linear-gradient(135deg, rgba(13, 22, 38, 0.94), rgba(5, 9, 20, 0.8)),
+      radial-gradient(circle at 12% 0%, rgba(46, 168, 255, 0.15), transparent 34%);
+    box-shadow:
+      inset 0 1px 0 rgba(245, 247, 250, 0.08),
+      0 20px 54px rgba(0, 0, 0, 0.28);
+  }
+
+  .about-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(46, 168, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 168, 255, 0.06) 1px, transparent 1px);
+    background-position: right top;
+    background-size: 36px 36px;
+    mask-image: radial-gradient(circle at 100% 0%, black, transparent 54%);
+  }
+
+  .about-copy,
+  .about-highlights {
+    position: relative;
+    z-index: 1;
+  }
+  .about-copy h2 {
+    max-width: 46rem;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.35rem, 8vw, 4.8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0;
+    color: var(--text);
+  }
+
+  .about-body {
+    display: grid;
+    gap: 1.15rem;
+    max-width: 48rem;
+    margin-top: 1.75rem;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .about-body p {
+    margin: 0;
+  }
+
+  .about-interests-wrap {
+    max-width: 48rem;
+    margin-top: 1.75rem;
+  }
+
+  .about-interests-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .about-interests-label::before {
+    content: '';
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-right: 0.55rem;
+    border-radius: 9999px;
+    background: var(--accentYellow);
+    box-shadow: 0 0 12px rgba(255, 210, 31, 0.35);
+  }
+
+  .about-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .about-interests span {
+    border: 1px solid rgba(46, 168, 255, 0.22);
+    border-radius: 9999px;
+    padding: 0.45rem 0.7rem;
+    background: rgba(46, 168, 255, 0.06);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    line-height: 1;
+  }
+
+  .about-highlights {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .about-highlight {
+    border: 1px solid rgba(46, 168, 255, 0.18);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    background:
+      linear-gradient(135deg, rgba(19, 35, 58, 0.68), rgba(13, 22, 38, 0.72)),
+      rgba(5, 9, 20, 0.3);
+  }
+
+  .about-highlight-label {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--primaryBlue);
+  }
+
+  .about-highlight strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .about-highlight span:last-child {
+    display: block;
+    margin-top: 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  
+  @media (min-width: 768px) {
+    .about-section {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+
+    .about-panel {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .about-section {
+      padding: 1rem 3rem 6rem 8.75rem;
+    }
+
+    .about-panel {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.36fr);
+      align-items: start;
+      gap: 3rem;
+      padding: 2.4rem;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(3.25rem, 3.8vw, 5.5rem);
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .about-section {
+      padding-left: 10rem;
+      padding-right: 4rem;
+    }
+
+    .about-panel {
+      padding: 3rem;
+    }
+  }
+}
