@@ -5,6 +5,7 @@
 @import './styles/sections/status-cards.css';
 @import './styles/sections/about.css';
 @import './styles/sections/work.css';
+@import './styles/sections/stack.css';
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;

@@ -4,6 +4,7 @@ import { Hero } from './sections/Hero'
 import { StatusCards } from './sections/StatusCards'
 import { About } from './sections/About'
 import { Work } from './sections/Work'
+import { Stack } from './sections/Stack'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <StatusCards />
           <About />
           <Work />
+          <Stack />
         </main>
       </div>
     </div>
