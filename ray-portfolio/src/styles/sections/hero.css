@@ -12,15 +12,7 @@
     max-width: 42.5rem;
     text-align: left;
   }
-
-  .hero-kicker {
-    font-family: var(--font-mono);
-    font-size: 1.275rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--primaryBlue);
-  }
-
+  
   .hero-title {
     margin-top: 1.25rem;
     font-family: var(--font-heading);

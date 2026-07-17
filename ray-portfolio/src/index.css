@@ -14,16 +14,29 @@
 }
 
 :root {
-  --background: #050914;
-  --surface: #0d1626;
-  --surfaceLight: #13233a;
-  --text: #f5f7fa;
-  --muted: #9aa6b2;
-  --primaryBlue: #2ea8ff;
+  --background: #2f3034;
+  --surface: #292a2e;
+  --surfaceLight: #45474d;
+  --text: #f4f4f1;
+  --muted: #c2c5ca;
+  --primaryBlue: #4ab4ff;
   --deepBlue: #0b6fdb;
   --accentYellow: #ffd21f;
   --softYellow: #f6c945;
-  --borderBlue: rgba(46, 168, 255, 0.25);
+  --darkBorder: rgba(0, 0, 0, .24);
+  --borderBlue: rgba(74, 180, 255, 0.24);
+  --cardBorder: rgb(52 52 52 / 62%);
+  --cardBorderSoft: rgb(52 52 52 / 46%);
+  --cardBorderFaint: rgb(52 52 52 / 30%);
+  --shell: rgba(41, 42, 46, 0.74);
+  --navSurface: rgba(50, 51, 55, 0.84);
+  --railSurface: rgba(50, 51, 55, 0.5);
+  --panelSurface: rgba(43, 44, 49, 0.92);
+  --panelSurfaceDeep: rgba(29, 30, 34, 0.88);
+  --panelSurfaceLight: rgba(78, 80, 86, 0.66);
+  --tileSurface: rgba(32, 33, 37, 0.34);
+  --tileSurfaceStrong: rgba(38, 39, 43, 0.64);
+  --neutralGlow: rgba(158, 158, 158, 0.32);
 
   color: var(--text);
   background: var(--background);
@@ -68,8 +81,8 @@ a {
 
 .bg-page-grid {
   background-image:
-    linear-gradient(rgba(46, 168, 255, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46, 168, 255, 0.09) 1px, transparent 1px);
+    linear-gradient(rgba(190, 196, 204, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 196, 204, 0.07) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(circle at 50% 18%, black, transparent 68%);
 }

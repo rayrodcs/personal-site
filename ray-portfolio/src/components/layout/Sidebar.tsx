@@ -56,7 +56,7 @@ function Icon({ icon }: { icon: SidebarIcon }) {
 
 export function Sidebar() {
   return (
-    <aside className="absolute bottom-0 left-0 top-24 z-20 hidden w-20 border-r border-[var(--borderBlue)] bg-[rgba(5,9,20,0.38)] xl:flex xl:flex-col xl:items-center">
+    <aside className="absolute bottom-0 left-0 top-24 z-20 hidden w-20 border-r border-[var(--darkBorder)] bg-[var(--railSurface)] xl:flex xl:flex-col xl:items-center">
       <div className="mt-20 flex flex-col items-center gap-5">
         {icons.map((icon) => (
           <Icon key={icon.label} icon={icon} />

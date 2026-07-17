@@ -7,7 +7,7 @@ const prefersReducedMotion =
   typeof window !== 'undefined'
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false
-
+  
 export function Hero() {
   const [typedSubtitle, setTypedSubtitle] = useState(
     prefersReducedMotion ? subtitleText : '',
@@ -37,9 +37,6 @@ export function Hero() {
   return (
     <section id="home" className="hero-section">
       <div className="hero-copy">
-        <p className="hero-kicker">
-          Hey, I'm <span className="text-[var(--accentYellow)]">///</span>
-        </p>
 
         <h1 className="hero-title">
           <span className="block drop-shadow-[0_4px_0_rgba(255,255,255,0.12)]">
@@ -56,8 +53,8 @@ export function Hero() {
         </p>
 
         <p className={`hero-description hero-reveal ${introComplete ? 'is-visible' : ''}`}>
-          I build full-stack systems and enjoyable experiences that solve real-world
-          problems. Clean code. Thoughtful design. Built to scale.
+          I build full-stack systems and apps that solve real-world
+          problems. I also build interactive entertainment projects that are fun to play.
         </p>
 
         <div className={`hero-actions hero-reveal hero-reveal-actions ${introComplete ? 'is-visible' : ''}`}>
@@ -70,7 +67,7 @@ export function Hero() {
           <a
             href={profileLinks.resume}
             download
-            className="inline-flex items-center justify-center rounded-md border border-[var(--borderBlue)] bg-[rgba(13,22,38,0.64)] px-6 py-4 font-mono text-sm font-bold uppercase tracking-[0.08em] text-[var(--text)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--primaryBlue)] hover:text-[var(--primaryBlue)]"
+            className="inline-flex items-center justify-center rounded-md border border-gray bg-[rgba(143, 167, 207, 0.64)] px-6 py-4 font-mono text-sm font-bold uppercase tracking-[0.08em] text-[var(--text)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--primaryBlue)] hover:text-[var(--primaryBlue)]"
           >
             Download Resume <FiDownload className="ml-3 h-4 w-4" aria-hidden="true" />
           </a>

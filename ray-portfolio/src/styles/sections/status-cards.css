@@ -16,12 +16,12 @@
     position: relative;
     min-height: 21rem;
     overflow: hidden;
-    border: 1px solid var(--borderBlue);
+    border: 1px solid var(--cardBorder);
     border-radius: 0.5rem;
     padding: 1.5rem 1.5rem 4.75rem;
     background:
-      linear-gradient(140deg, rgba(19, 35, 58, 0.72), rgba(13, 22, 38, 0.9) 54%),
-      radial-gradient(circle at top right, rgba(46, 168, 255, 0.16), transparent 34%),
+      radial-gradient(circle at top right, rgba(142, 142, 142, 0.18), transparent 34%),
+      linear-gradient(140deg, var(--panelSurfaceLight), var(--panelSurface) 54%),
       var(--surface);
     box-shadow:
       inset 0 1px 0 rgba(245, 247, 250, 0.08),
@@ -54,13 +54,13 @@
     width: 10rem;
     height: 10rem;
     pointer-events: none;
-    border: 1px solid rgba(46, 168, 255, 0.14);
+    border: 1px solid var(--cardBorderFaint);
     border-radius: 9999px;
   }
 
   .section-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(46, 168, 255, 0.48);
+    border-color: rgb(52 52 52 / 78%);
     box-shadow:
       inset 0 1px 0 rgba(245, 247, 250, 0.1),
       inset 0 0 34px rgba(46, 168, 255, 0.1),
@@ -104,7 +104,7 @@
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0.02em;
-    color: var(--primaryBlue);
+    color: white;
   }
 
   .section-card-slashes {
@@ -183,9 +183,9 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     overflow: hidden;
-    border: 1px solid rgba(46, 168, 255, 0.18);
+    border: 1px solid var(--cardBorderSoft);
     border-radius: 0.4rem;
-    background: rgba(5, 9, 20, 0.28);
+    background: var(--tileSurface);
   }
 
   .stack-item {
@@ -193,8 +193,8 @@
     min-height: 4.15rem;
     place-items: center;
     gap: 0.35rem;
-    border-right: 1px solid rgba(46, 168, 255, 0.14);
-    border-bottom: 1px solid rgba(46, 168, 255, 0.14);
+    border-right: 1px solid var(--cardBorderFaint);
+    border-bottom: 1px solid var(--cardBorderFaint);
     padding: 0.75rem 0.5rem;
     text-align: center;
     font-family: var(--font-mono);
