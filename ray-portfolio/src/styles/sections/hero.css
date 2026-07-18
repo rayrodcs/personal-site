@@ -10,17 +10,30 @@
     position: relative;
     z-index: 20;
     max-width: 42.5rem;
+    container-type: inline-size;
     text-align: left;
   }
   
   .hero-title {
     margin-top: 1.25rem;
     font-family: var(--font-heading);
-    font-size: clamp(4.7rem, 14vw, 8.9rem);
+    font-size: 3.5rem;
+    font-size: min(4.7rem, 16cqw);
     font-weight: 900;
     line-height: 0.82;
     letter-spacing: 0;
     color: var(--text);
+  }
+
+  .hero-title > span {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 359px) {
+    .hero-title {
+      font-size: 3rem;
+      font-size: min(4.7rem, 16cqw);
+    }
   }
 
   .hero-subtitle {
@@ -46,6 +59,45 @@
     margin-top: 2rem;
   }
 
+  .hero-avatar-placement {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+    pointer-events: none;
+  }
+
+  .hero-avatar {
+    position: relative;
+    width: clamp(8.5rem, 38vw, 11rem);
+    filter: drop-shadow(0 1.1rem 0.7rem rgba(18, 18, 20, 0.3));
+    transition-delay: 190ms;
+  }
+
+  .hero-avatar::after {
+    position: absolute;
+    right: 12%;
+    bottom: -0.3rem;
+    left: 12%;
+    height: 1px;
+    content: '';
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(74, 180, 255, 0.7),
+      transparent
+    );
+  }
+
+  .hero-avatar-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+  }
+
   @media (min-width: 640px) {
     .hero-section {
       padding-right: 2rem;
@@ -68,6 +120,10 @@
       flex-direction: row;
     }
 
+    .hero-avatar {
+      width: 11rem;
+    }
+
   }
 
   @media (min-width: 1024px) {
@@ -84,6 +140,19 @@
       font-size: clamp(5.8rem, 7.1vw, 9.4rem);
     }
 
+    .hero-avatar-placement {
+      position: absolute;
+      top: 50%;
+      right: clamp(5.5rem, 9vw, 10rem);
+      width: auto;
+      margin-top: 0;
+      transform: translateY(-47%);
+    }
+
+    .hero-avatar {
+      width: clamp(11rem, 15vw, 16rem);
+    }
+
     .scroll-cue {
       right: 3rem;
       bottom: 2.4rem;
@@ -94,6 +163,10 @@
   @media (min-width: 1536px) {
     .hero-section {
       padding-left: 10rem;
+    }
+
+    .hero-avatar-placement {
+      right: clamp(9rem, 12vw, 15rem);
     }
   }
 }

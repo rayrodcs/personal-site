@@ -74,6 +74,18 @@ export function Hero() {
         </div>
       </div>
 
+      <div className="hero-avatar-placement">
+        <div
+          className={`hero-avatar hero-reveal ${introComplete ? 'is-visible' : ''}`}
+        >
+          <img
+            src="/sprites/trainer/running-right.png"
+            alt="Pixel art avatar of Ray running"
+            className="hero-avatar-image"
+          />
+        </div>
+      </div>
+
       <a
         href="#status-cards"
         className={`scroll-cue hero-reveal ${introComplete ? 'is-visible' : ''}`}
