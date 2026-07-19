@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { RRLogo } from '../illustrations/RRLogo'
-import { mailtoLink, profileLinks } from '../../data/profileLinks'
+import { profileLinks } from '../../data/profileLinks'
 
 type NavItem = {
   label: string
@@ -17,9 +17,10 @@ const navItems: NavItem[] = [
   { label: 'Resume', href: profileLinks.resume, external: true },
 ]
 
-const sectionIds = navItems.flatMap((item) =>
-  item.sectionId ? [item.sectionId] : [],
-)
+const sectionIds = [
+  ...navItems.flatMap((item) => (item.sectionId ? [item.sectionId] : [])),
+  'contact',
+]
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
@@ -94,11 +95,10 @@ export function Navbar() {
                 {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
                 {...(isActive ? { 'aria-current': 'location' as const } : {})}
                 onClick={sectionId ? () => setActiveSection(sectionId) : undefined}
-                className={`navbar-link relative font-mono text-sm uppercase tracking-[0.08em] transition duration-200 ${
-                  isActive
-                    ? 'is-active text-[var(--primaryBlue)]'
-                    : 'text-[var(--text)] hover:text-[var(--primaryBlue)]'
-                }`}
+                className={`navbar-link relative font-mono text-sm uppercase tracking-[0.08em] transition duration-200 ${isActive
+                  ? 'is-active text-[var(--primaryBlue)]'
+                  : 'text-[var(--text)] hover:text-[var(--primaryBlue)]'
+                  }`}
               >
                 {item.label}
               </a>
@@ -107,8 +107,12 @@ export function Navbar() {
         </div>
 
         <a
-          href={mailtoLink}
-          className="hidden rounded border border-[var(--primaryBlue)] px-6 py-3.5 font-mono text-xs uppercase tracking-[0.08em] text-[var(--text)] transition duration-200 hover:bg-[rgba(46,168,255,0.12)] hover:text-white hover:shadow-[0_0_24px_rgba(46,168,255,0.22)] sm:inline-flex"
+          href="#contact"
+          aria-current={activeSection === 'contact' ? 'location' : undefined}
+          onClick={() => setActiveSection('contact')}
+          className={`navbar-contact hidden rounded border border-[var(--primaryBlue)] px-6 py-3.5 font-mono text-xs uppercase tracking-[0.08em] text-[var(--text)] transition duration-200 hover:bg-[rgba(46,168,255,0.12)] hover:text-white hover:shadow-[0_0_24px_rgba(46,168,255,0.22)] sm:inline-flex ${
+            activeSection === 'contact' ? 'is-active' : ''
+          }`}
         >
           Let's Connect <span className="ml-3 text-[var(--primaryBlue)]">-&gt;</span>
         </a>

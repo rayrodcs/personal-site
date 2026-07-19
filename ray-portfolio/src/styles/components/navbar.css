@@ -37,9 +37,16 @@
     outline: none;
   }
 
+  .navbar-contact.is-active {
+    background: rgba(46, 168, 255, 0.12);
+    color: white;
+    box-shadow: 0 0 24px rgba(46, 168, 255, 0.22);
+  }
+
   @media (prefers-reduced-motion: reduce) {
 
     .navbar-link,
+    .navbar-contact,
     .navbar-link::after {
       transition: none;
     }
