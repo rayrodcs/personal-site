@@ -1,0 +1,2 @@
+# Exclude CSS from GitHub Linguist's repository language totals.
+ray-portfolio/src/**/*.css linguist-detectable=false
