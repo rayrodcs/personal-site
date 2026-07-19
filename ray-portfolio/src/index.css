@@ -81,6 +81,10 @@ a {
   min-height: 100svh;
 }
 
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 .bg-page-grid {
   background-image:
     linear-gradient(rgba(190, 196, 204, 0.07) 1px, transparent 1px),
