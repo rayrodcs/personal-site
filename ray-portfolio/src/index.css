@@ -6,6 +6,7 @@
 @import './styles/sections/about.css';
 @import './styles/sections/work.css';
 @import './styles/sections/stack.css';
+@import './styles/sections/contact.css';
 @import './styles/components/navbar.css';
 
 @theme {

@@ -5,6 +5,7 @@ import { StatusCards } from './sections/StatusCards'
 import { About } from './sections/About'
 import { Work } from './sections/Work'
 import { Stack } from './sections/Stack'
+import { Contact } from './sections/Contact'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <About />
           <Work />
           <Stack />
+          <Contact />
         </main>
       </div>
     </div>
