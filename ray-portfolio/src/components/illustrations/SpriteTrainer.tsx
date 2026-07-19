@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 /* 
     Heavily commenting this file as this is a bit more
@@ -46,22 +46,25 @@ export function SpriteTrainer({ introComplete, className }: SpriteTrainerProps) 
     const [spritePhase, setSpritePhase] = useState<SpritePhase>('hidden')
 
     useEffect(() => {
-        if (!introComplete) return;
+        if (!introComplete) return
 
-        const enteringPhase = setTimeout(() => {
-            setSpritePhase('entering');
-        }, 500)
+        const enteringTimer = setTimeout(() => {
+            setSpritePhase('entering')
+        }, 123)
 
         // then use some kind of move() function to move my character to the left till he enters the screen.
-        return () => clearInterval(enteringPhase)
+        return () => clearTimeout(enteringTimer)
     }, [introComplete])
 
 
     return (
         <div className={`sprite-trainer ${className ?? ''}`} data-phase={spritePhase}>
-            <canvas className='sprite-canvas'>
-
-            </canvas>
+            <img
+                src='../public/sprites/trainer/confident-front.png'
+                alt='' aria-hidden='true'
+                className='sprite-trainer-img'
+                draggable='false'
+            />
         </div>
     )
 }
