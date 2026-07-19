@@ -1,43 +1,106 @@
+import { useEffect, useState } from 'react'
 import { RRLogo } from '../illustrations/RRLogo'
 import { mailtoLink, profileLinks } from '../../data/profileLinks'
 
-const navItems = ['Home', 'About', 'Work', 'Stack', 'Resume', 'Contact']
+type NavItem = {
+  label: string
+  href: string
+  sectionId?: string
+  external?: boolean
+}
+
+const navItems: NavItem[] = [
+  { label: 'Home', href: '#home', sectionId: 'home' },
+  { label: 'About', href: '#about', sectionId: 'about' },
+  { label: 'Work', href: '#work', sectionId: 'work' },
+  { label: 'Stack', href: '#stack', sectionId: 'stack' },
+  { label: 'Resume', href: profileLinks.resume, external: true },
+]
+
+const sectionIds = navItems.flatMap((item) =>
+  item.sectionId ? [item.sectionId] : [],
+)
 
 export function Navbar() {
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    let animationFrame = 0
+
+    const updateActiveSection = () => {
+      if (window.scrollY < 120) {
+        setActiveSection('home')
+        return
+      }
+
+      const activationLine = Math.min(window.innerHeight * 0.35, 320)
+      let currentSection = 'home'
+
+      sectionIds.forEach((sectionId) => {
+        const section = document.getElementById(sectionId)
+
+        if (
+          section &&
+          section.getBoundingClientRect().top <= activationLine
+        ) {
+          currentSection = sectionId
+        }
+      })
+
+      setActiveSection(currentSection)
+    }
+
+    const handleScroll = () => {
+      if (animationFrame) return
+
+      animationFrame = window.requestAnimationFrame(() => {
+        animationFrame = 0
+        updateActiveSection()
+      })
+    }
+
+    updateActiveSection()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+      window.cancelAnimationFrame(animationFrame)
+    }
+  }, [])
+
   return (
     <header className="sticky top-0 z-30 border-b border-[var(--darkBorder)] bg-[var(--navSurface)] backdrop-blur-xl">
       <nav className="flex h-24 w-full items-center justify-between px-5 sm:px-8 lg:px-6 xl:px-8">
-        <a href="#home" className="group inline-flex items-center" aria-label="Ray Rodriguez home">
+        <a
+          href="#home"
+          className="group inline-flex items-center"
+          aria-label="Ray Rodriguez home"
+          onClick={() => setActiveSection('home')}
+        >
           <RRLogo className="h-12 w-[96px] transition duration-200 group-hover:drop-shadow-[0_0_18px_rgba(46,168,255,0.45)]" />
         </a>
 
         <div className="hidden items-center gap-10 lg:flex">
           {navItems.map((item) => {
-            const isActive = item === 'Home'
+            const sectionId = item.sectionId
+            const isActive = sectionId === activeSection
 
             return (
               <a
-                key={item}
-                href={
-                  item === 'Home'
-                    ? '#home'
-                    : item === 'Resume'
-                      ? profileLinks.resume
-                      : item === 'Contact'
-                        ? mailtoLink
-                        : `#${item.toLowerCase()}`
-                }
-                {...(item === 'Resume' ? { target: '_blank', rel: 'noreferrer' } : {})}
-                className={`relative font-mono text-sm uppercase tracking-[0.08em] transition duration-200 ${
+                key={item.label}
+                href={item.href}
+                {...(item.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                {...(isActive ? { 'aria-current': 'location' as const } : {})}
+                onClick={sectionId ? () => setActiveSection(sectionId) : undefined}
+                className={`navbar-link relative font-mono text-sm uppercase tracking-[0.08em] transition duration-200 ${
                   isActive
-                    ? 'text-[var(--primaryBlue)]'
+                    ? 'is-active text-[var(--primaryBlue)]'
                     : 'text-[var(--text)] hover:text-[var(--primaryBlue)]'
                 }`}
               >
-                {item}
-                {isActive ? (
-                  <span className="absolute -bottom-4 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[var(--primaryBlue)] shadow-[0_0_16px_var(--primaryBlue)]" />
-                ) : null}
+                {item.label}
               </a>
             )
           })}
