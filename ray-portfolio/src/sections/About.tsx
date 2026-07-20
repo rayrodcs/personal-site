@@ -15,7 +15,7 @@ export function About() {
       <div className="about-panel">
         <div className="about-copy">
           <p className="section-kicker">ABOUT <span className="text-[var(--accentYellow)]">///</span></p>
-          <h2>Engineer, Builder, and Problem Solver.</h2>
+          <h2>Developer, Builder, and Problem Solver.</h2>
 
           <div className="about-body">
             <p>
@@ -39,8 +39,8 @@ export function About() {
               product opportunities.
             </p>
             <p>
-              Thanks to the work I do at my current company, I am comfortable working under pressure, 
-              navigating tight deadlines, and making practical engineering decisions when the work 
+              Thanks to the work I do at my current company, I am comfortable working under pressure,
+              navigating tight deadlines, and making practical engineering decisions when the work
               has real business impact. I care about clean code, reliable systems, and interfaces that
               feel sharp without getting in the user's way.
             </p>

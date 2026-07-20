@@ -43,7 +43,7 @@ export function StatusCards() {
           </div>
 
           <div className="current-copy">
-            <p>Building scalable web apps, agent tools, and sleek interfaces.</p>
+            <p>Building scalable web apps, automation tools, and sleek interfaces.</p>
             <p>Exploring AI, real-time systems, and performance at scale.</p>
           </div>
         </SectionCard>
